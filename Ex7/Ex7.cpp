@@ -44,7 +44,10 @@ int f1(list* p)
 {
     if (p == NULL) return 0;
     int i = kol(p->info);
-    if (sim(p->info, i, i) == p->info)return f1(p->next) + 1;
+    if (p->info > 9)
+    {
+        if (sim(p->info, i, i) == p->info)return f1(p->next) + 1;
+    }    
     return f1(p->next);
 }
 void f2(list* p)
